@@ -1,0 +1,33 @@
+.navbar {
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.navbar img {
+    float: left;
+    padding: 15px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+video {
+    
+    /* width: 100%; */
+    /* height: auto; */
+    /* opacity: 0.3;
+    height: 100%;
+    width: 177.77777778vh;
+    min-width: 100%;
+    min-height: 56.25vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
