@@ -1,14 +1,24 @@
 const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
-
 const app = express();
+const port = 43011;
+
+const cors = require('cors');
+const twilio = require('./api/twilio')
+require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
 
+app.post('/sendMessages', async (req, res) => {
+    try {
+        await twilio.sendMessage();
+      res.status(200).json({ success: true });
+    } catch (error) {
+      console.error('Error sending messages:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
 
-const port = 43011;
 app.listen(port, () => {
     console.log(`server is running on ${port}`);
 })
