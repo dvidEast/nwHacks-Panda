@@ -11,7 +11,7 @@ const client = twilio(accountSid, authToken);
 async function sendMessage(userNumber) {
   try {
     const message = await client.messages.create({
-      body: "david is testing you're...",
+      body: "get off your phone or else ... ",
       from: twNumber,
       to: '+1' + userNumber,
     });
