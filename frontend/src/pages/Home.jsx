@@ -12,6 +12,8 @@ export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
   const num = searchParams.get('number');
 
+  const video = document.querySelector('#video-feed');
+
   useEffect(() => {
     const video = document.querySelector('#video-feed');
     videoStart(video, num);
@@ -60,7 +62,7 @@ export default function Home() {
     <>
       <nav className="home-nav">
         <p className="nav-logo">pandAI</p>
-        <Link onClick={handTrack.stopVideo(video)} to="/">Home</Link>
+        <Link className='nav-child' onClick={handTrack.stopVideo(video)} to="/">Home</Link>
       </nav>
 
       <div id="tab">

@@ -24,7 +24,6 @@ export default function Landing() {
                     to keep you focused on the task at hand.
 
                     </p>
-
                     <p id='slide'>Input your phone number and get started today!</p>
                     <div id='slide' className="start-container">
                         <input onChange={(e) => setInputValue(e.target.value)} type="text" placeholder='(xxx) xxx xxxx'className="starting-input" />
