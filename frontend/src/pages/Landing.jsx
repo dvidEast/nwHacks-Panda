@@ -1,19 +1,31 @@
 import { Link } from "react-router-dom"
+
 import "../styles/Landing.css"
 
 export default function Landing() {
     return(
-        <div id="landing-body"> 
-            <video autoPlay loop>
-                <source src='frontend/public/home.mp4'/>
-            </video>
+        <div> 
+            {/* <video>
+                <source src="/nwHacks-Panda/frontend/public/video720.mp4" type="video/mp4" />
+            </video> */}
             <nav className="navbar">
-                <h1>This is the landing page</h1>
-                <img src="" alt="" />
-                <a href="section1">Section 1</a>
-                <a href="section2">Section 2</a>
+                <p className="nav-logo">pandAI</p>
+                <div className='nav-links'>
+                    <a href="section1">Section 1</a>
+                    <a href="section2">Section 2</a>
+                </div>
             </nav>
-            <Link to="/home">Get Started</Link>
+
+            <section id="landing-body"> 
+                <h2>Boost Productivity +<br />Reduce Anxiety =<br />Opportunity.</h2>
+                <p>using hand tracking computer vision technology, we created an artificially intelligent
+                   study companion to help reduce the amount of time spent on our phones, and away from 
+                   building our future careers!
+                </p>
+                <div>
+                    <Link className="starting-link" to="/home">Starting Studying Now</Link>
+                </div>
+            </section>
         </div>
     )
 }

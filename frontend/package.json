@@ -10,9 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "handtrackjs": "^0.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
+    "react-player": "^2.14.1",
+    "react-router-dom": "^6.21.3"
+=======
     "react-router-dom": "^6.21.3",
+>>>>>>> 83e24b3bc237cd4afa56abad5185f7cb8bfbebd6
     "handtrackjs": "0.0.13"
   },
   "devDependencies": {
