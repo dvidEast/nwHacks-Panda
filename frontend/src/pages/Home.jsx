@@ -64,7 +64,7 @@ export default function Home() {
     <>
       <nav className="navbar">
         <p className="nav-logo">pandAI</p>
-        <Link to="/">Home</Link>
+        <Link onClick={handTrack.stopVideo(video)} to="/">Home</Link>
       </nav>
 
       <div id='tab'>
