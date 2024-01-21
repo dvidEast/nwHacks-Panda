@@ -1,3 +1,4 @@
+
 async function sendMessageToBackend() {
     console.log("Send Message To Backend");
     try {

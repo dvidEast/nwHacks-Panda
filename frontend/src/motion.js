@@ -45,6 +45,7 @@ handTrack.startVideo(video).then((status) => {
 
 
 export function runDetection(video) {
+  console.log(video);
   model.detect(video).then((predictions) => {
     if (predictions.length > 0) {
       aboveThresholdDuration += 1;
