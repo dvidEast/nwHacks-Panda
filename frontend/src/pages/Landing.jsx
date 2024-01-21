@@ -10,17 +10,16 @@ export default function Landing() {
     return(
         <>
             <nav className="home-navbar">
-                <p id="nav-logo">pandAI</p>
+                <p id="nav-logo">PandAI</p>
                 <div className='nav-links'>
-                    <a href="section1">Section 1</a>
-                    <a href="section2">Section 2</a>
+                    <a href="section1">nwHacks</a>
                 </div>
             </nav>
 
             <section id="landing-body"> 
                 <div className="left-side">
                     <h2 id='slide'>Boost Productivity + <br />Reduce Anxiety =<br />Opportunity.</h2>
-                    <p id='slide'>An innovative solution to screen time and procrastination, using camera-tracking technology
+                    <p id='slide'>An innovative solution to screen time and procrastination, using computer vision technology
                     to keep you focused on the task at hand.
 
                     </p>

@@ -61,8 +61,8 @@ export default function Home() {
   return (
     <>
       <nav className="home-nav">
-        <p className="nav-logo">pandAI</p>
-        <Link className='nav-child' onClick={handTrack.stopVideo(video)} to="/">Home</Link>
+        <p className="nav-logo">PandAI</p>
+        <Link className='back' onClick={handTrack.stopVideo(video)} to="/">back</Link>
       </nav>
 
       <div id="tab">

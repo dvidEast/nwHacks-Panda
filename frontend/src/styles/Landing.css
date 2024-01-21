@@ -23,9 +23,9 @@
 }
 
 .home-navbar p {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 500;
-    margin-left: 2.5rem;
+    margin-left: 3rem;
 }
 
 .nav-links {
@@ -45,25 +45,23 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    transform: translate(0, 5%);
+    transform: translate(0, 4%);
 }
 
 /* right side --------------------------*/
-
-.right-side {
-}
-
+/* .right-side {
+    width: ;
+} */
 .right-side img {
     width: 100%;
-    padding-left: 3rem;
 }
 
 /* left side --------------------------*/
 
 .left-side {
-    width: 100%;
+    width: 130%;
     margin-left: 10rem;
-    margin-right: 1rem;
+    margin-right: 5rem;
 }
 
 .left-side h2{
@@ -72,8 +70,6 @@
 }
 
 .left-side p {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     font-size: 1.2rem;
 }
 
@@ -82,6 +78,7 @@
     justify-content: space-between;
     align-items: center;
     padding-right: 1rem;
+    margin-top: 3rem;    
 }
 
 .starting-input {
