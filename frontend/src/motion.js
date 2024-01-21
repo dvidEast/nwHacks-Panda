@@ -1,5 +1,7 @@
 import * as handTrack from "handtrackjs";
 import * as calls from'./calls';
+import * as Home from "./pages/Home";
+
 
 
 Navigator.getUserMedia =
@@ -23,6 +25,7 @@ const modelParams = {
 // console.log("line 20", context);
 let model;
 let PhoneOnSwitch = true;
+let PomodoraOn = false;
 
 
 export function videoStart(video) {
@@ -51,6 +54,7 @@ export function runDetection(video) {
   console.log(video);
   // console.log("test 4")
   model.detect(video).then((predictions) => {
+    if (PomodoraOn) {
     if (predictions.length > 0) {
       if (PhoneOnSwitch){
       PhoneOnSwitch = false;
@@ -65,7 +69,12 @@ export function runDetection(video) {
       }
        console.log(PhoneOnSwitch);
      }
-  });
+  }
+  else {
+    
+  }
+}
+);
 }
 handTrack.load(modelParams).then((lmodel) => {
   model = lmodel;

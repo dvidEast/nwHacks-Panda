@@ -3,8 +3,6 @@ import * as handTrack from "handtrackjs";
 import React, {useEffect, useRef} from 'react';
 import {videoStart} from '../motion'
 
-
-
 export default function Home() {
   const video = document.querySelector("#video-feed");
 
