@@ -15,7 +15,8 @@
     "react-dom": "^18.2.0",
     "react-player": "^2.14.1",
     "react-router-dom": "^6.21.3",
-    "handtrackjs": "0.0.13"
+    "handtrackjs": "0.0.13",
+    "react-router-dom": "^6.21.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
