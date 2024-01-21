@@ -44,7 +44,7 @@ The front end was designed using **React** {David add more stuff}
 - Eye Gaze tracking to allow more versatile forms of attention tracking<br>
 - Userbase creation to allow users to save progress and have the website remember phone numbers<br>
 - Customizable encouragement messages using Generative AI<br>
-- 
+
 
 
 
