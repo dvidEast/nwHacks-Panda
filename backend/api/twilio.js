@@ -3,7 +3,7 @@ require('dotenv').config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twNumber = process.env.TWILIO_NUMBER;
-const userNumber = process.env.USER_NUMBER;
+let userNumber = process.env.USER_NUMBER;
 
 const twilio = require('twilio');
 const client = twilio(accountSid, authToken);
@@ -21,6 +21,14 @@ async function sendMessage() {
   } catch (error) {
     console.error('Error sending message:', error.message);
     throw error;
+  }
+}
+
+async function setNumber(num) {
+  try {
+    this.userNumber = num;
+  } catch (error) {
+    console.error('number not copied', error.message);
   }
 }
 
@@ -43,4 +51,5 @@ console.log("THIS IS TWILIO TEXTING");
 
 module.exports = {
   sendMessage,
+  setNumber,
 };

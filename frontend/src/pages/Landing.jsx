@@ -16,13 +16,13 @@ export default function Landing() {
 
             <section id="landing-body"> 
                 <div className="left-side">
-                    <h2 id='slide'>Boost Productivity +<br />Reduce Anxiety =<br />Opportunity.</h2>
-                    <p id='slide'>using hand tracking computer vision technology, we created an artificially intelligent
-                    study companion to help reduce the amount of time spent on our phones, and work towards
-                    building our future careers!
+                    <h2 id='slide'>Boost Productivity + <br />Reduce Anxiety =<br />Opportunity.</h2>
+                    <p id='slide'>An innovative solution to screen time and procrastination, using camera-tracking technology
+                    to keep you focused on the task at hand.
+
                     </p>
 
-                    <p id='slide'>Input your phone number and start today!</p>
+                    <p id='slide'>Input your phone number and get started today!</p>
                     <div id='slide' className="start-container">
                         <input placeholder='xxx  xxx  xxxx'className="starting-input" type="text" />
                         <Link className="starting-link" to="/home">Starting Studying Now</Link>

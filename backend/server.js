@@ -19,6 +19,15 @@ app.post('/sendMessage', async (req, res) => {
     }
   });
 
+app.post('/sendNumber', async (req, res) => {
+  try {
+    twilio.setNumber('+1' + JSON.stringify(req.body));
+} catch (error) {
+  console.error('Error sending messages:', error);
+  res.status(500).json({ error: 'Internal Server Error' });
+}
+});
+
 app.listen(port, () => {
     console.log(`server is running on ${port}`);
 })

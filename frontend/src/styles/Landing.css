@@ -42,7 +42,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    transform: translate(0, 10%);
+    transform: translate(0, 5%);
 }
 
 /* right side --------------------------*/
@@ -60,6 +60,7 @@
 .left-side {
     width: 100%;
     margin-left: 10rem;
+    margin-right: 1rem;
 }
 
 .left-side h2{
