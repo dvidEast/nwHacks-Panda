@@ -1,4 +1,5 @@
 async function sendMessageToBackend() {
+    console.log("Send Message To Backend");
     try {
       const response = await fetch('http://localhost:43011/api/sendMessage', {
         method: 'POST',
@@ -21,7 +22,5 @@ async function sendMessageToBackend() {
   
   // You can call this function based on a user action, for example:
   // When a button is clicked
-  document.getElementById('sendMessageButton').addEventListener('click', sendMessageToBackend);
-  module.exports = {
-    sendMessageToBackend,
-  };
+  // document.getElementById('sendMessageButton').addEventListener('click', sendMessageToBackend);
+  export { sendMessageToBackend };

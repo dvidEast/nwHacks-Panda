@@ -1,4 +1,5 @@
 import * as handTrack from "handtrackjs";
+import * as calls from'./calls';
 
 
 Navigator.getUserMedia =
@@ -54,6 +55,7 @@ export function runDetection(video) {
     }
   }
     else{
+       calls.sendMessageToBackend();
        aboveThresholdDuration = 0;
        console.log(aboveThresholdDuration);
      }

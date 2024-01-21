@@ -35,7 +35,12 @@ async function sendMessage() {
 //     }
 //   }
 // }
-sendMessage();
+
+
+// sendMessage();
+
+console.log("THIS IS TWILIO TEXTING");
+
 module.exports = {
   sendMessage,
 };
