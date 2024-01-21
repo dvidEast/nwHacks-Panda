@@ -7,5 +7,11 @@
  #
  npm install --save handtrackjs
  #
+
+ FOR ROOT:
  npm install --save-dev concurrently
+
+ FOR BACKEND:
+ npm install twilio dotenv cors express
+
 
