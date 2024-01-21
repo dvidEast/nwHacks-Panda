@@ -30,7 +30,7 @@ The front end was designed using **React** {David add more stuff}
 - Developed a clean and comforting landing and home page <br>
 - Building all of our members first ever web app <br>
 - Working with handling front-end inputs to trigger back-end API calls <br>
-- Learning new React techniques
+- Learning new React techniques.
 
 
 ## What we learned
