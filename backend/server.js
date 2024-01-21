@@ -9,7 +9,7 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 
-app.post('/sendMessages', async (req, res) => {
+app.post('/sendMessage', async (req, res) => {
     try {
         await twilio.sendMessage();
         res.status(200).json({ success: true });
