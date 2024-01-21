@@ -6,4 +6,6 @@
  npm install --save-dev parcel 
  #
  npm install --save handtrackjs
+ #
+ npm install --save-dev concurrently
 
