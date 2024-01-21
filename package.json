@@ -1,0 +1,13 @@
+{
+    "name": "nwhacks-panda",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "postinstall": "(cd server && npm install) && (cd ../client && npm install)",
+      "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev \"",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+      "concurrently": "^7.0.0"
+    }
+  }
