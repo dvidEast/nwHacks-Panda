@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom"
 
 import "../styles/Landing.css"
+import redPanda from "../assets/red_panda.png"
 
 export default function Landing() {
     return(
-        <div> 
-            {/* <video>
-                <source src="/nwHacks-Panda/frontend/public/video720.mp4" type="video/mp4" />
-            </video> */}
+        <>
             <nav className="navbar">
                 <p className="nav-logo">pandAI</p>
                 <div className='nav-links'>
@@ -17,15 +15,24 @@ export default function Landing() {
             </nav>
 
             <section id="landing-body"> 
-                <h2>Boost Productivity +<br />Reduce Anxiety =<br />Opportunity.</h2>
-                <p>using hand tracking computer vision technology, we created an artificially intelligent
-                   study companion to help reduce the amount of time spent on our phones, and away from 
-                   building our future careers!
-                </p>
-                <div>
-                    <Link className="starting-link" to="/home">Starting Studying Now</Link>
+                <div className="left-side">
+                    <h2 id='slide'>Boost Productivity +<br />Reduce Anxiety =<br />Opportunity.</h2>
+                    <p id='slide'>using hand tracking computer vision technology, we created an artificially intelligent
+                    study companion to help reduce the amount of time spent on our phones, and work towards
+                    building our future careers!
+                    </p>
+
+                    <p id='slide'>Input your phone number and start today!</p>
+                    <div id='slide' className="start-container">
+                        <input placeholder='xxx  xxx  xxxx'className="starting-input" type="text" />
+                        <Link className="starting-link" to="/home">Starting Studying Now</Link>
+                    </div>
+                </div>
+
+                <div className="right-side">
+                    <img src={redPanda} alt="Logo" />
                 </div>
             </section>
-        </div>
+        </>
     )
 }
