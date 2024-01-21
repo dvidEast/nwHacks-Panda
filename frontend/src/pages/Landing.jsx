@@ -2,15 +2,15 @@ import { useState } from 'react'
 import { Link } from "react-router-dom"
 
 import "../styles/Landing.css"
-import redPanda from "../assets/red_panda.png"
+import redPanda from "/red_panda.png"
 
 export default function Landing() {
     const [inputValue, setInputValue] = useState(0);
     
     return(
         <>
-            <nav className="navbar">
-                <p className="nav-logo">pandAI</p>
+            <nav className="home-navbar">
+                <p id="nav-logo">pandAI</p>
                 <div className='nav-links'>
                     <a href="section1">Section 1</a>
                     <a href="section2">Section 2</a>
@@ -27,7 +27,7 @@ export default function Landing() {
 
                     <p id='slide'>Input your phone number and get started today!</p>
                     <div id='slide' className="start-container">
-                        <input onChange={(e) => setInputValue(e.target.value)} type="text" placeholder='xxx  xxx  xxxx'className="starting-input" />
+                        <input onChange={(e) => setInputValue(e.target.value)} type="text" placeholder='(xxx) xxx xxxx'className="starting-input" />
                         <Link 
                         // onClick={()=>sendNumberToMotion(Number(inputValue))} 
                         className="starting-link" to={`/home?number=${inputValue}`}>Starting Studying Now</Link>

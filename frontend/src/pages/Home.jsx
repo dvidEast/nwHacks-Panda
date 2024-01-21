@@ -1,31 +1,27 @@
-import '../styles/Home.css'
-import * as handTrack from "handtrackjs";
-import React, {useEffect, useState} from 'react';
-import {videoStart} from '../motion'
-import {useSearchParams} from 'react-router-dom'
-import { Link } from "react-router-dom"
+import '../styles/Home.css';
+import * as handTrack from 'handtrackjs';
+import React, { useEffect, useState } from 'react';
+import { videoStart } from '../motion';
+import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import panda from '/panda_teacher.png'
 
 export default function Home() {
-  const video = document.querySelector("#video-feed");
+  // ----- Video Setup
   const [searchParams, setSearchParams] = useSearchParams();
-  const num = searchParams.get("number");
- 
+  const num = searchParams.get('number');
 
   useEffect(() => {
-    console.log('test')
-    var canvas = document.querySelector("canvas")
-    console.log("test2", canvas)
-    const video = document.querySelector("#video-feed");
-    videoStart(video, num)
-  }, [])
-
+    const video = document.querySelector('#video-feed');
+    videoStart(video, num);
+  }, [num]);
 
   // ----- timer stuff
 
   const [time, setTime] = useState(0);
-  const [inputMinutes, setInputMinutes] = useState(0);
-  const [inputSeconds, setInputSeconds] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
+  const [timerPause, setTimerPause] = useState(false)
 
   useEffect(() => {
     let interval;
@@ -40,86 +36,75 @@ export default function Home() {
   }, [timerRunning, time]);
 
   const formatTime = () => {
-    return `${String(inputMinutes).padStart(2, '0')}:${String(inputSeconds).padStart(2, '0')}`;
+    return `${String(Math.floor(time / 60)).padStart(2, '0')}:${String(time % 60).padStart(2, '0')}`;
   };
 
   const startTimer = () => {
-    if (inputTime > 0) {
-      setTime(inputTime);
+    if (time>0){
       setTimerRunning(true);
     }
   };
 
   const stopTimer = () => {
     setTimerRunning(false);
+    setTimerPause(true);
   };
 
   const resetTimer = () => {
     setTimerRunning(false);
+    setTimerPause(false);
     setTime(0);
-    setInputTime(0);
   };
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="home-nav">
         <p className="nav-logo">pandAI</p>
-        <Link to="/">Home</Link>
+        <Link className='nav-child' to="/">Home</Link>
       </nav>
 
-      <div id='tab'>
+      <div id="tab">
         <div className="circle-container">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
+          <div className="circle1 circle"></div>
+          <div className="circle2 circle"></div>
+          <div className="circle3 circle"></div>
         </div>
 
-        <div id='home-container'>
-          <div className='video-container'>
+        <div id="home-container">
+          <div className="video-container">
             <video className="content" id="video-feed"></video>
           </div>
 
-          <div className='timer-container'>
-            <h1 className='countdown-title'>Input Your Study Duration and Start Studying</h1>
-            {!timerRunning && (
+          <div className="timer-container">
+            <h1 className="countdown-title">Pick a study period and press start to begin!</h1>
+            {!timerRunning && !timerPause && (
               <input
-                type="text" // Change the type to "text"
-                placeholder="Enter time in minutes:seconds"
-                value={formatTime()}
+                type="Text"
+                placeholder="ex) 1234 -> 12 min 34 sec"
                 onChange={(e) => {
                   const input = e.target.value;
 
                   if (input.length <= 2) {
-                    setInputMinutes = 0;
-                    setInputSeconds = input;
-                    formatTime()
+                    setTime(Number(input));
+                  } else if (input.length == 4){
+                    setTime(Number(input[0] + input[1]) * 60 + Number(input[2] + input[3]));
                   } else {
-                    setInputMinutes = string(input)[3] + string(input)[2]
-                    setInputSeconds = string(input)[1] + string(input)[0]
-                    formatTime()
+                    setTime(Number(input[0]) * 60 + Number(input[1] + input[2]));
                   }
                 }}
               />
             )}
-            {timerRunning && <h3 className='countdown'>{formatTime()}</h3>}
-            <div className='buttons-container'>
+            {(timerRunning || timerPause) && <h3 className="countdown">{formatTime()}</h3>}
+            <div className="buttons-container">
               {!timerRunning && <button onClick={startTimer}>Start</button>}
               {timerRunning && <button onClick={stopTimer}>Stop</button>}
               <button onClick={resetTimer}>Reset</button>
             </div>
           </div>
         </div>
-
       </div>
-    </>
 
-  // return (
-  //   <>
-  //   <video id="video-feed"> </video>
-  //     <canvas id="canvas">
-  //       Your browser does not support the canvas tag.
-  //     </canvas>
-      
-  //   </>
-  )
+      <img className='home-panda' src={panda} />
+    </>
+  );
 }

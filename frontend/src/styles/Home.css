@@ -1,10 +1,35 @@
+/* NAVBAR --------------------------------*/
+
+.home-nav {
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+}
+
+.home-nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    color: #BE5845;
+    margin-right: 2rem;
+}
+
+/* NAVBAR --------------------------------*/
+
 #tab{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #FFF9E6;
 
     border: 4px solid #56423E;
     border-radius: 10px;
+    /* box-shadow: 0 0 20px rgba(190, 166, 160, 0.5); */
     
     width: 80%;
     margin: 5% auto; 
@@ -27,6 +52,18 @@
     height: 12px;
     background-color: #56423E; 
     border-radius: 50%;
+}
+
+.circle1 {
+    background-color: #BE5845;
+}
+
+.circle2 {
+    background-color: #BEA6A0;
+}
+
+.circle3 {
+    background-color: #8AB860;
 }
 
 /* circles ------------------------------ */
@@ -68,20 +105,37 @@
 .timer-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
   
-input, h3 {
-    background-color: transparent;
-    border: none;
+/* input/count down ----------------------- */
 
-    font-size: 30px;
+input {
+    background-color: transparent;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+
+    font-size: 15px;
     font-weight: 500;
     color: #56423E;
 
     padding: 0;
-    margin: 0 0 10px;
+    padding: 15px 15px;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
 }
+
+input:focus {
+    border: 2px solid #8AB860; 
+}
+
+.countdown {
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+/* input/count down ----------------------- */
 
 .countdown-title {
     color: #56423E;
@@ -115,4 +169,36 @@ button {
     vertical-align: baseline;
     width: 7rem;
     margin-left: 5px;
+}
+
+/* panda image */
+
+.home-panda {
+    position: absolute;
+    width: 300px;
+    z-index: 10;
+    top: 60%;
+    left: 75%;
+}
+
+/* animation    */
+
+.slide-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+@keyframes slideAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#tab.slide-animation {
+    animation: slideAnimation 1s ease-out forwards 1.5s;
 }
