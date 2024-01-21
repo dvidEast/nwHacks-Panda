@@ -25,7 +25,7 @@ const modelParams = {
 // console.log("line 20", context);
 let model;
 let PhoneOnSwitch = true;
-let PomodoraOn = false;
+let PomodoraOn = true;
 
 
 export function videoStart(video) {
