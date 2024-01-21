@@ -1,7 +1,7 @@
 async function sendMessageToBackend() {
     console.log("Send Message To Backend");
     try {
-      const response = await fetch('http://localhost:43011/api/sendMessage', {
+      const response = await fetch('http://localhost:43011/sendMessage', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
