@@ -33,7 +33,7 @@ handTrack.startVideo(video).then((status) => {
       { video: {} },
       (stream) => {
         video.srcObject = stream;
-        setInterval(runDetection, 1000);
+        setInterval(runDetection(video), 1000);
       },
       (err) => console.log(err)
     );
@@ -43,7 +43,7 @@ handTrack.startVideo(video).then((status) => {
 
 
 
-export function runDetection() {
+export function runDetection(video) {
   model.detect(video).then((predictions) => {
     if (predictions.length > 0) {
       aboveThresholdDuration += 1;
