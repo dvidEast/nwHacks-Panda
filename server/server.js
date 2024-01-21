@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const port = 43011;
 
-const cors = require('cors');
+//const cors = require('cors');
 const twilio = require('./api/twilio')
 require('dotenv').config();
 
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 
 app.post('/sendMessages', async (req, res) => {
