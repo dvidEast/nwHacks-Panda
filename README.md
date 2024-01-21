@@ -19,6 +19,7 @@ The front end was designed using **React** {David add more stuff}
 ## Challenges we ran into
 
 - Integrating and handling API Request between our front end and back end<br>
+- Simultaneously running the front end and back end of our web page <br>
 - Handling web pages attempting to access our video capture function before they have been initialized using UseEffect() <br>
 - Designing the Pomodoro timer to blend cleanly on our home page <br>
 - Working with NodeJS, ExpressJS, JavaScript, and building a web app for the first time. 
@@ -57,3 +58,12 @@ NodeJS<br>
 TensorFlow<br>
 handtrackjs<br>
 Twilio
+
+Need these dependencies:<br>
+- npm install express
+- npm install twilio 
+- npm install dotenv 
+- npm install cors
+- npm install --save handtrackjs
+- npm install -g concurrently
+
