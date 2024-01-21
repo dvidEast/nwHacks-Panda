@@ -1,5 +1,6 @@
 import '../styles/Home.css'
 import * as handTrack from "handtrackjs";
+// import '../motion'
 
 export default function Home() {
   // Navigator.getUserMedia =

@@ -1,4 +1,4 @@
-import "./styles.css";
+
 import * as handTrack from "handtrackjs";
 Navigator.getUserMedia =
   Navigator.getUserMedia ||
@@ -10,11 +10,11 @@ const modelParams = {
   imageScaleFactor: 0.7, // reduce input image size for gains in speed.
   maxNumBoxes: 20, // maximum number of boxes to detect
   iouThreshold: 0.5, // ioU threshold for non-max suppression
-  scoreThreshold: 0.79, // confidence threshold for predictions.
+  scoreThreshold: 0.90, // confidence threshold for predictions.
 };
 
-const video = document.querySelector("#video");
-const audio = document.querySelector("#audio");
+const video = document.querySelector("#video-feed");
+// const audio = document.querySelector("#audio");
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 let model;
@@ -40,7 +40,7 @@ function runDetection() {
       aboveThresholdDuration += 1;
       console.log(predictions);
       if (aboveThresholdDuration >= thresholdDurationLimit) {
-      audio.play();
+      // Add text notify here
       aboveThresholdDuration = 0;
     }
   }
