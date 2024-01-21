@@ -4,6 +4,8 @@ import "../styles/Landing.css"
 import redPanda from "../assets/red_panda.png"
 
 export default function Landing() {
+    
+
     return(
         <>
             <nav className="navbar">
