@@ -26,9 +26,15 @@ const modelParams = {
 let model;
 let PhoneOnSwitch = true;
 let PomodoraOn = true;
+// let userNumber = 7787886024;
 
 
-export function videoStart(video) {
+// export function sendNumberToMotion(num) {
+//   console.log("num: " + num)
+//   userNumber = num;
+// }
+
+export function videoStart(video, num) {
   console.log("test3");
 handTrack.startVideo(video).then((status) => {
   if (status) {
@@ -38,7 +44,7 @@ handTrack.startVideo(video).then((status) => {
         video.srcObject = stream;
 
         setInterval(() => {
-          runDetection(video);
+          runDetection(video, num);
         }, 1000);
 
       },
@@ -50,7 +56,7 @@ handTrack.startVideo(video).then((status) => {
 
 
 
-export function runDetection(video) {
+export function runDetection(video, userNumber) {
   console.log(video);
   // console.log("test 4")
   model.detect(video).then((predictions) => {
@@ -60,7 +66,7 @@ export function runDetection(video) {
       PhoneOnSwitch = false;
       console.log(predictions);
       console.log(PhoneOnSwitch);
-      calls.sendMessageToBackend();
+      calls.sendMessageToBackend(userNumber);
       }
   }
     else{

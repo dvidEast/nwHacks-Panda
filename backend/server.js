@@ -10,24 +10,15 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/sendMessage', async (req, res) => {
+  console.log(req.body)
     try {
-        await twilio.sendMessage();
+        await twilio.sendMessage(req.body.text);
         res.status(200).json({ success: true });
     } catch (error) {
       console.error('Error sending messages:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-
-app.post('/sendNumber', async (req, res) => {
-  try {
-    twilio.setNumber('+1' + req.body.text); 
-    res.status(200).json({ success: true });
-} catch (error) {
-  console.error('Error sending messages:', error);
-  res.status(500).json({ error: 'Internal Server Error' });
-}
-});
 
 app.listen(port, () => {
     console.log(`server is running on ${port}`);

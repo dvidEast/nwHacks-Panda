@@ -1,11 +1,12 @@
+import { useState } from 'react'
 import { Link } from "react-router-dom"
 
 import "../styles/Landing.css"
 import redPanda from "../assets/red_panda.png"
 
 export default function Landing() {
+    const [inputValue, setInputValue] = useState(0);
     
-
     return(
         <>
             <nav className="navbar">
@@ -26,8 +27,10 @@ export default function Landing() {
 
                     <p id='slide'>Input your phone number and get started today!</p>
                     <div id='slide' className="start-container">
-                        <input placeholder='xxx  xxx  xxxx'className="starting-input" type="text" />
-                        <Link className="starting-link" to="/home">Starting Studying Now</Link>
+                        <input onChange={(e) => setInputValue(e.target.value)} type="text" placeholder='xxx  xxx  xxxx'className="starting-input" />
+                        <Link 
+                        // onClick={()=>sendNumberToMotion(Number(inputValue))} 
+                        className="starting-link" to={`/home?number=${inputValue}`}>Starting Studying Now</Link>
                     </div>
                 </div>
 
