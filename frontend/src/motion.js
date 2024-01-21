@@ -1,4 +1,4 @@
-import "./styles.css";
+
 import * as handTrack from "handtrackjs";
 Navigator.getUserMedia =
   Navigator.getUserMedia ||
@@ -13,8 +13,8 @@ const modelParams = {
   scoreThreshold: 0.90, // confidence threshold for predictions.
 };
 
-const video = document.querySelector("#video");
-const audio = document.querySelector("#audio");
+const video = document.querySelector("#video-feed");
+// const audio = document.querySelector("#audio");
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 let model;
@@ -40,7 +40,7 @@ function runDetection() {
       aboveThresholdDuration += 1;
       console.log(predictions);
       if (aboveThresholdDuration >= thresholdDurationLimit) {
-      audio.play();
+      // Add text notify here
       aboveThresholdDuration = 0;
     }
   }
