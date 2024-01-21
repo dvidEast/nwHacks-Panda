@@ -22,9 +22,8 @@ const modelParams = {
 // const context = canvas.getContext("2d");
 // console.log("line 20", context);
 let model;
+let PhoneOnSwitch = true;
 
-let aboveThresholdDuration = 0;
-const thresholdDurationLimit = 5;
 
 export function videoStart(video) {
   console.log("test3");
@@ -34,7 +33,11 @@ handTrack.startVideo(video).then((status) => {
       { video: {} },
       (stream) => {
         video.srcObject = stream;
-        setInterval(runDetection(video), 1000);
+
+        setInterval(() => {
+          runDetection(video);
+        }, 1000);
+
       },
       (err) => console.log(err)
     );
@@ -46,19 +49,21 @@ handTrack.startVideo(video).then((status) => {
 
 export function runDetection(video) {
   console.log(video);
+  // console.log("test 4")
   model.detect(video).then((predictions) => {
     if (predictions.length > 0) {
-      aboveThresholdDuration += 1;
+      if (PhoneOnSwitch){
+      PhoneOnSwitch = false;
       console.log(predictions);
-      if (aboveThresholdDuration >= thresholdDurationLimit) {
-      // Add text notify here
-      aboveThresholdDuration = 0;
-    }
+      console.log(PhoneOnSwitch);
+      calls.sendMessageToBackend();
+      }
   }
     else{
-       calls.sendMessageToBackend();
-       aboveThresholdDuration = 0;
-       console.log(aboveThresholdDuration);
+      if (!PhoneOnSwitch) {
+       PhoneOnSwitch = true;
+      }
+       console.log(PhoneOnSwitch);
      }
   });
 }
