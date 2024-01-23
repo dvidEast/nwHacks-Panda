@@ -1,7 +1,7 @@
 # PandAI @ nwHacks 2024
 ## Inspiration
 
-In this era of rapid technological advancements and pervasive social media, countless individuals worldwide grapple with challenges in maintaining focus on crucial tasks. Distraction is more than just an inconvenience; it poses obstacles to learning, contributes to feelings of exclusion, and can even hinder professional advancement in the workplace. It is for these reasons that **PandAI** was conceived.
+In this era of rapid technological advancements and pervasive social media, countless individuals worldwide grapple with challenges in maintaining focus on crucial tasks. Distraction is more than just an inconvenience; it poses obstacles to learning, contributes to feelings of exclusion, and can even hinder professional advancement in the workplace. It is for these reasons that **PandAI** was created.
 
 
 ## What it does
@@ -12,9 +12,7 @@ PandAI serves as your dedicated study buddy, providing motivation when you devia
 
 We used **Tensor Flow** and streamed our user's webcam using **handtrackjs** to detect the confidence score of their hands being used away from the keyboard and on their phones. We continuously evaluate this data in our front end and selectively send POST requests to our back end. These requests will then tell the Twilio API to send text messages to our users to get them back on track. 
 
-We used **ExpressJS** to handle request for our API response endpoints, as well as **Nodemon** to continuously restart our servers. 
-
-The front end was designed using **React** {David add more stuff} 
+We used **node.js** and **express.js** for the backend and React for the front end.
 
 ## Challenges we ran into
 
@@ -28,9 +26,11 @@ The front end was designed using **React** {David add more stuff}
 ## Accomplishments that we're proud of
 
 - Developed a clean and comforting landing and home page <br>
-- Building all of our members first ever web app <br>
+- Building all of our first ever web app <br>
 - Working with handling front-end inputs to trigger back-end API calls <br>
-- Learning new React techniques.
+- Learning Node and Express for the first time <br>
+- Learning new React techniques
+- Finishing our first Hackathon!
 
 
 ## What we learned
@@ -46,16 +46,13 @@ The front end was designed using **React** {David add more stuff}
 - Userbase creation to allow users to save progress and have the website remember phone numbers<br>
 - Customizable encouragement messages using Generative AI<br>
 
-
-
-
-
-List of frameworks and technologies<br>
+## List of frameworks and technologies<br>
 ExpressJS<br>
 Javascript<br>
 React<br>
 NodeJS<br>
 TensorFlow<br>
+Vite<br>
 handtrackjs<br>
 Twilio
 
